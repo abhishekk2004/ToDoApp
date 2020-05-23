@@ -1,0 +1,51 @@
+<div class="todoBody">
+    <div class="container row">
+        <div class="col m8 offset-m2 s12">
+            <div class="header teal">
+                <h3 class="center centera">ToDo List <span class="right">{{date}}</span></h3>
+            </div>
+            <div class="body grey lighten-3">
+                <br>
+                <div class="container">
+                    <form action="/" method="POST" class="flex">
+                        <div class="input-field left">
+                            <input type="text" name="task">
+                            <label for="text">Write Something!</label>
+                        </div>
+                        <button class="btn-floating btn-md waves-effect waves-light teal"><i
+                                class="fa fa-plus"></i></button>
+
+                    </form>
+
+                    <h5 class="center">Tasks ToDo</h5>
+                    <div class="divider"></div>
+                    {{#if list}}
+                    {{#each list}}
+                    <form action="/delete/{{this._id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+
+                        <ul class="flex form-top">
+                            <li class="left">
+                                <h5>{{this.task}}</h5>
+                            </li>
+                            <div class="right flex-2">
+                                <a href="/edit/{{this._id}}" class="deep-teal lightn-3 btn left-2 btn-floating"><i
+                                        class="fa fa-pencil"></i> </a>
+                                <button class="btn red right-2 btn-floating"><i class="fa fa-times"></i> </button>
+                            </div>
+                        </ul>
+                    </form>
+                    {{/each}}
+                    {{else}}
+                    <div class="notCreated">
+                        <p class="center">You Have No Due Any Task</p>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="footer">
+                <p class="center teal white-text">abhishekk8210 | &copy; CopyRight</p>
+            </div>
+        </div>
+    </div>
+</div>

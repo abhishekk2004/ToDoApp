@@ -1,0 +1,26 @@
+<div class="todoBody">
+    <div class="container row">
+        <div class="col m8 offset-m2 s12">
+            <div class="header teal">
+                <h3 class="center centera">ToDo List <span class="right">{{date}}</span></h3>
+            </div>
+            <div class="body grey lighten-3">
+                <br>
+                <div class="container">
+                    <form action="/edit/{{list._id}}?_method=PUT" method="POST" class="flex">
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="input-field left">
+                            <input type="text" name="task" value="{{list.task}}">
+                            <label for="text">Edit Here!</label>
+                        </div>
+                        <button class="btn-floating btn-md waves-effect waves-light teal"><i
+                                class="fa fa-pencil"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                <p class="center teal white-text">abhishekk8210 | &copy; CopyRight</p>
+            </div>
+        </div>
+    </div>
+</div>
